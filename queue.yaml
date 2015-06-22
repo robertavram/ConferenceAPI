@@ -1,0 +1,13 @@
+# Set the total storage limit for all queues to 120MB
+total_storage_limit: 120M
+queue:
+- name: default
+  rate: 1/s
+  bucket_size: 40
+  max_concurrent_requests: 10
+  retry_parameters:
+    min_backoff_seconds: 10
+    max_backoff_seconds: 200
+    max_doublings: 3
+    task_retry_limit: 7
+    task_age_limit: 2d
