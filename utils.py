@@ -13,7 +13,7 @@ import datetime as datetimeTypes
 
 def is_valid_name(name):
     ''' Checks if a name is valid '''
-    if name != name.title() or len(name)<3 or len(name)>50:
+    if not name or name != name.title() or len(name)<3 or len(name)>50:
         return False
     regex = re.compile(r"^[^\W0-9_]+([ \-'][^\W0-9_]+)*?$", re.U)
     return regex.match(name) is not None
