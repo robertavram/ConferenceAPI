@@ -88,7 +88,19 @@ There are a few ways to solve this problem:
  	Since queries like this will take significant DB re-architecting, and a tremendous amount of time for figuring out all the potential indexes, creating a document for each session with the Search API seems to me like the best solution in this case. Even though search API queries are more expensive to run than NDB queries, I feel like the ability to return more relevant results quicker and reducing the development time when it comes to full text search within the DB is well worth it. :)
 
    *I have implemented this type of querying mechanism in `queryproblem2` in the conference api.*
-   
+
+### Version
+0.0.1
+
+
+License
+----
+
+Apache License
+Version 2.0, January 2004
+
+
+**Free Software**
    
    
 [1]: https://developers.google.com/appengine
