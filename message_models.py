@@ -59,7 +59,7 @@ class ConferenceSessionForm_search(messages.Message):
     websafeSessionKey = messages.StringField(1)
     name            = messages.StringField(2)
     type            = messages.StringField(3)
-    duration        = messages.IntegerField(4)
+    duration        = messages.IntegerField(4) # in Minutes
     startDate       = messages.StringField(5)
     startTime       = messages.StringField(6)
     highlights      = messages.StringField(7)

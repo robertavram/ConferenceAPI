@@ -15,23 +15,29 @@ from google.appengine.api import app_identity
 from google.appengine.api import mail
 from conference import ConferenceApi
 
+
 class SetAnnouncementHandler(webapp2.RequestHandler):
+
     def get(self):
         """Set Announcement in Memcache."""
         ConferenceApi._cacheAnnouncement()
         self.response.set_status(204)
-        
+
+
 class AddFeaturedSpeaker(webapp2.RequestHandler):
+
     def post(self):
         """Set Featured Speaker"""
         ConferenceApi._setFeaturedSpeaker(self.request.get("speaker_name"),
                                           self.request.get_all("sess_keys"),
-                                          self.request.get("current_sess_name"),
+                                          self.request.get(
+                                              "current_sess_name"),
                                           self.request.get("conf"),
                                           self.request.get("conf_loc"))
 
 
 class SendConfirmationEmailHandler(webapp2.RequestHandler):
+
     def post(self):
         """Send email confirming Conference creation."""
         mail.send_mail(
